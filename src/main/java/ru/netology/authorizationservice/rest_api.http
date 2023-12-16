@@ -1,4 +1,4 @@
-GET localhost:8080/authorize
+GET localhost:8080/authorize?user=admin&password=1212
 Accept: application/json
 
 

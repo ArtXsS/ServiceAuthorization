@@ -1,11 +1,14 @@
 package ru.netology.authorizationservice;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-
+@Repository
 public class UserRepository {
+
     public List<Authorities> getUserAuthorities(String user, String password) {
         String name = "admin";
         String pass = "1212";
@@ -15,5 +18,8 @@ public class UserRepository {
         }
         List<Authorities> nothing = new ArrayList<>();
         return nothing;
+
+
     }
+
 }

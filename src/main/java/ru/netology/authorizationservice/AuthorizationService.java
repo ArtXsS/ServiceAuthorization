@@ -2,10 +2,11 @@ package ru.netology.authorizationservice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.List;
-
+@Service
 public class AuthorizationService {
     UserRepository userRepository;
 
@@ -18,6 +19,10 @@ public class AuthorizationService {
             throw new UnauthorizedUser("Unknown user " + user);
         }
         return userAuthorities;
+    }
+
+    public AuthorizationService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @ExceptionHandler(InvalidCredentials.class)
